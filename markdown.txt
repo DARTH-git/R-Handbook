@@ -1,0 +1,63 @@
+---
+title: "Rmarkdown"
+author: "David"
+date: "March 26, 2018"
+output: html_document
+--- 
+
+My example R markdown document. 
+
+# Header 1 
+
+**Bold Text**
+
+*italics*
+
+## Header 2
+
+Table 1
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+Lists 
+
+- List item 1
+- List item 2
+- List item 3
+
+Numbered lists 
+
+1. First item in list
+
+1. Second item in list
+
+1. Third item in list
+
+Links   <http://www.cookbook-r.com/Graphs/>)
+
+LaTeX mathematical typesetting. 
+
+$$\frac{\sum_{i=1}^{n} X_i}{n} $$
+
+
+To include R code chunks use `---{r}` 
+
+```{r}
+library(ggplot2)
+```
+
+It also includes output and figures.
+
+```{r}
+2+2 
+
+hist(mydata$age)
+```
+
+To include R code in text use:
+
+Mean age `r mean(mydata$age)`
+
