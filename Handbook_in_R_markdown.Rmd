@@ -11,12 +11,12 @@ author:
 includes:
   in_header: preamble.tex
 output:
-  pdf_document:
-    toc: yes
   word_document:
     reference_docx: DARTH_Template_Markdown.docx
     toc: yes
     toc_depth: 1
+  pdf_document:
+    toc: yes
   html_document:
     toc: yes
 header-includes:
@@ -35,12 +35,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction to R
 ## A Short history of R
-R is a statistical software largely based on the S language. S was created in the 1970s but only started becoming popular in the late 1980s when its programming core was translated into C (from FORTRAN). It was later commercialized through the S-Plus software, a quite popular statistical tool throughout the early 2000s. During the 1990s, R was introduced as an open source S-based alternative, with capabilities similar to S-Plus, but with a more simplistic Graphical User Interface (GUI). In parallel with the rise of S-Plus, R also received significant attention, particularly through its application in university research. As the "younger (and free) sibling" of S-Plus, R has become the main statistical programming tool for a growing number of statisticians. The contributor structure of R, where the functionality of the platform is contiuously increasing through an expanding set of freely-available, user-contributed packages, makes R more and more popular and powerful over time. To date, more than two thousand packages have been contributed to the R archive (CRAN) mirror.
+R is a statistical software largely based on the S language. S was created in the 1970s but only started becoming popular in the late 1980s when its programming core was translated into C (from FORTRAN). It was later commercialized through the S-Plus software, a quite popular statistical tool throughout the early 2000s. During the 1990s, R was introduced as an open source S-based alternative, with capabilities similar to S-Plus, but with a more simplistic Graphical User Interface (GUI). In parallel with the rise of S-Plus, R also received significant attention, particularly through its application in university research. As the "younger (and free) sibling" of S-Plus, R has become the main statistical programming tool for a growing number of statisticians. The contributor structure of R, where the functionality of the platform is continuously increasing through an expanding set of freely-available, user-contributed packages, makes R more and more popular and powerful over time. To date, more than two thousand packages have been contributed to the R archive (CRAN) mirror.
 
 Nowadays, R is almost entirely based on scientific contributions of users in the form of packages. There is a Core group dealing with the development of the project and the GUI, but most of the functions are provided by external scientists. R is provided under a GNU general public license, which allows it to be used freely by anyone for any purpose, but provides no warranty or guarantees on its functionality. The software's interface is not the most welcoming to users not familiar with programming and script language; there is thus a steep learning curve for the beginner in R. R is more user-friendly than classical programming languages (such as C) and can have a similar user-interface to programming software platforms like MATLAB (especially when using the RStudio interface). As a programming language, however, R requires more programming expertise than GUI-based statistical software, such as Excel, SPSS or TreeAge. Despite the learning curve, we feel that the convenient combination of programming capabilities, the level of control over the statistical methods used, the availability of open-source solutions, online help and publicly available scientific literature on the use of R far outweigh the lack of a (not so) user-friendly GUI.
 
 ## How to install R
-R is freely distributed through the website of the Comprehensive R archive Network (CRAN) (<http://www.r-project.org>). Just select the mirror situated on a location close to you, download and install the R version that suits your operating system (OS). Installing the base version of R is what you need so that you can start interacting with R (extending this base version by downloading additional packages will be discussed later). You should generally install the most recent version of R.
+R is freely distributed through the website of the Comprehensive R archive Network (CRAN) (<http://www.r-project.org>). Just select the mirror situated on a location close to you, download and install the R version that suits your operating system (OS).The base version of R is what you need so that you can start interacting with it (extending this base version by downloading additional packages will be discussed later). You should generally install the most recent version of R.
 
 ## Add-on R GUIs and install R Studio
 Over the last years a number of add-on GUIs have been developed that simplify considerably the use of R by providing structure and guidance on writing code in R. While not eliminating the need to write code, these GUIs offer more point-and-click options thereby making the transition to R easier. Although numerous such interfaces exist, RStudio is the most popular of these and is the one we will be using throughout this handbook. It can be downloaded and installed for free from <https://www.rstudio.com/>. 
@@ -49,19 +49,19 @@ Over the last years a number of add-on GUIs have been developed that simplify co
 * On the next page, choose "Download" under "R Studio Desktop Open Source".
 * Pick the installer for your operating system and run the installer as usual.
 
-Some of the functions in Rstudio that improve efficiency include the auto-filling option with the use of the 'Tab' button; the automatic closing of brackets, parentheses, and braces; the color-coding of code semantics (e.g., different colors for a numeric varible vs. a string variable vs. a comment); and the automatic identification of errors (e.g. missing closing bracket).
+Some of the functions in Rstudio that improve efficiency include the auto-filling option with the use of the 'Tab' button; the automatic closing of brackets, parentheses, and braces; the color-coding of code semantics (e.g., different colors for a numeric variable vs. a string variable vs. a comment); and the automatic identification of errors (e.g. missing closing bracket).
 
 ## Playing around with the RStudio interface
 After installing both R and RStudio, open the RStudio interface. Figure 1 previews what will appear on your screen.
 
-```{r, echo = F, fig.cap = "Figure 1: The busy '+' sign in the R Console"}
+```{r, echo = F, fig.cap = "The RStudio interface", out.width='100%'}
 knitr::include_graphics("Figs/Rstudio_ConsoleWin.png")
 ```
 
 
-The R Console is the area where all commands are executed. The sidebar on the bottom right provides easy access to any plots generated by R, an overview of the files on the working folder, the packages available and a help interface. On the top right, the sidebar offers easy access to the variables that are currently in R's memory (the list is empty in Figure 1). The menus on top of the Console offer access to the basic actions (Open script, Save script, Copy, Paste, Undo, Stop script, Print) and specific R functions (e.g. loading R packages). The `>` sign on the console, on the left side of the cursor, designates that R is ready and waiting for a command. In Figure 2, the `+` sign indicates that R expects the user to provide the rest of an incomplete command. Clicking the button 'Stop' or pressing the keyboard button 'Esc' terminates the current command and returns R to the ready and waiting model `>`.
+The R Console is the area where all commands are executed. The sidebar on the bottom right provides easy access to any plots generated by R, an overview of the files in the working folder, the packages available and a help interface. On the top right, the sidebar offers easy access to the variables that are currently in R's memory (the list is empty in Figure 1). The menus on top of the Console offer access to the basic actions (Open script, Save script, Copy, Paste, Undo, Stop script, Print) and specific R functions (e.g. loading R packages). The `>` sign on the console, on the left side of the cursor, designates that R is ready and waiting for a command. In Figure 2, the `+` sign indicates that R expects the user to provide the rest of an incomplete command. Clicking the button 'Stop' or pressing the keyboard button 'Esc' terminates the current command and returns R to the ready and waiting model `>`.
 
-```{r, echo = F, fig.cap = "Figure 2: The RStudio interface"}
+```{r, echo = F, fig.cap = "The busy ‘+’ sign in the R Console", out.width='100%'}
 knitr::include_graphics("Figs/Rstudio_ConsoleWin_busy.png")
 ```
 
@@ -75,7 +75,7 @@ Select the piece of script that you want to run and
 
 R and RStudio each have very comprehensive and useful 'Help' menus. By clicking on the R Help button in the Help menu a table of contents shows up at the bottom right of the RStudio interface. Except from a number of FAQs, the section in the help menu named 'Manuals' includes documents that offer a detailed introduction to R and its basic applications. RStudio has its own documentation (Help -> RStudio Docs) and Support (Help -> RStudio Support).
 
-```{r Rstudio_Editor_ConsoleWin, echo = F, fig.cap= "Figure 3: Writing and transferring commands from the script Editor to the Console"}
+```{r Rstudio_Editor_ConsoleWin, echo = F, fig.cap= "Writing and transferring commands from the script Editor to the Console", out.width='100%'}
 knitr::include_graphics("Figs/Rstudio_Editor_ConsoleWin.png")
 ```
 
@@ -101,7 +101,6 @@ An alternative, handy approach you can take in setting the working directory is 
 ```{r, eval = FALSE}
 setwd("path of your working directory"(e.g. "C:/")) 
 ```
-
 
 
 ## Cleaning the working space and the R memory
@@ -164,8 +163,10 @@ In the example above we specify three arguments: the package name (e.g. `abind`)
 If you do not have internet access to CRAN on your laptop, you could download either the source or binary file of certain packages from CRAN and store the file in a user-defined working folder or library folder. A source file is a compressed package that contains the code and the structure of the package from the distributor. After you download the source files, you have to decompress the files and install the packages. 
 
 ```{r, eval = FALSE}
-install.packages(paste0(wd.names, "/abind_1.4-5.tar"), repos = NULL, type = "source", lib = wd.names)
-install.packages(paste0(wd.names, "/Matrix_1.2-7.1.tar"), repos = NULL, type = "source", lib = wd.names)
+install.packages(paste0(wd.names, "/abind_1.4-5.tar"), repos = NULL, type = "source", 
+                 lib = wd.names)
+install.packages(paste0(wd.names, "/Matrix_1.2-7.1.tar"), repos = NULL, type = "source", 
+                 lib = wd.names)
 ```
 
 Because we install the package from the source packages in the local folder, we have to specify `repos = NULL`, and `type = source`. 
@@ -224,7 +225,7 @@ The value $y$ to the power of $x$ is symbolized by `y ^ x`:
 
 Note that power operations precede all other mathematical operations (+, -, x, /) in the order of operations.
 
-When first installed, R comes with most of the commonly used mathematical expressions built-in. The (natural) logarithm of x is calculated through the `log(x)` expression, the exponentiation $e^x$ is done through the `exp(x)` command and so on (Table 2). A comprehensive list of mathematical expressions and their representation with R language can be found in the R Reference Card (<http://cran.r-project.org/doc/contrib/Short-refcard.pdf>)
+When first installed, R comes with most of the commonly used mathematical expressions built-in. The (natural) logarithm of x is calculated through the `log(x)` expression, the exponentiation $e^x$ is done through the `exp(x)` command and so on (Table 1). A comprehensive list of mathematical expressions and their representation with R language can be found in the R Reference Card (<http://cran.r-project.org/doc/contrib/Short-refcard.pdf>)
 
 
 Function name               |  Function name
@@ -234,7 +235,7 @@ Exponent: `exp()`           |  Pi: `pi`
 Minimum:  `min()`           |  Integer rounding : `round()`
 Maximum:  `max()`	          |  Euler's number: `exp(1)`
 
-Table 2 : Common functions in R
+Table 1 : Common functions in R
 
 ## Assigning values to variables
 
@@ -360,16 +361,19 @@ Before proceeding to the statistical analysis of data, you should first be sure 
 All distributions that are defined in R have at least four functions that accompany them. These are functions to i) calculate the density of the distribution (e.g. `dnorm()`) ii) calculate the cumulative probability of the distribution (e.g. `pnorm()`), iii) calculate the quantile of the distribution (e.g. `qnorm()`), and iv) generate a random sample from the distribution (e.g. `rnorm()`). Below is an example of these four functions for the normal distribution:
 
 ```{r, echo = T}
-# Calculate the density of a normally distributed random variable with mean = 5 and st.deviation = 3 at the value of 5
+# Calculate the density of a normally distributed random variable with 
+# mean = 5 and st.deviation = 3 at the value of 5
 d_5 <- dnorm(5, mean = 5, sd = 3)
 
-# Calculate the cumulative probability of a value being 5 or lower given that it comes from a normal distribution with mean = 5 and st.deviation = 3
+# Calculate the cumulative probability of a value being 5 or lower given that it 
+# comes from a normal distribution with mean = 5 and st.deviation = 3
 p_5 <- pnorm(5, mean = 5, sd = 3)
 
 # Draw 100 random values from a normal distribution with mean = 5 and st. deviation = 3
 rand_5 <- rnorm(100, mean = 5, sd = 3)
 
-# Calculate the value under which 50% of the normal distribution with mean = 5 and sd = 3 lies (i.e. the median)
+# Calculate the value under which 50% of the normal distribution with mean = 5 and 
+# sd = 3 lies (i.e. the median)
 q_50 <- qnorm(0.5, mean = 5, sd = 3)
 ```
 
@@ -472,7 +476,8 @@ class(Matr)
 A **matrix** in R is an organized collection of same-sized vectors that contain elements of all the same data type (e.g., all numeric, all strings, all logical, etc.). A numerical matrix in R has all the mathematical properties of a matrix.
 
 A **list** in R is an object consisting of a collection of objects known as its components. These components are not necessarily of the same type. A list for example, could consist of a numeric vector, a logical value, a matrix, a complex vector, a character array, a function, and so on. Hence an example of a list could look like this:
-```{r, echo = FALSE}
+
+```{r, echo = TRUE}
 Pat <- list(name = "John", surname = "Doe", trt_code = 1, oher.meds = c("warf", "Ace") )
 ```
 Components are always numbered and may always be referred to as such. Thus if `Pat` is the name of a list with four components, these may be individually referred to as `Pat[[1]]`, `Pat[[2]]`, `Pat[[3]]` and `Pat[[4]]`. If `Pat[[4]]` is a vector in the list then `Pat[[4]][1]` is its first entry. Notice the differentiation between the single and double square bracket!
@@ -579,25 +584,28 @@ The plots presented below rely on the basic functionality of R. There have been 
 
 Assume you want to plot the values of the age variable of the blood pressure dataset. You can do so by using the `plot()` function. You can see that the sidebar on the bottom left of the RStudio interface is occupied by a new plot figure of the age values (Figure 4):
 
-```{r}
+```{r, fig.cap = "Plot of the age values"}
 plot(mydata$age)
 ```
 
-Additionally, you can plot two variables against each other in an attempt to identify any correlation structures. For example you could plot the subject's age against their SBP:
+Additionally, you can plot two variables against each other in an attempt to identify any correlation structures. For example you could plot the subject's age against their SBP (Figure 5):
 
-```{r}
-plot(mydata$age, mydata$sbp, main = "Scatter plot of Age versus SBP.")
+```{r, fig.cap = "Scatter plot of age versus SBP"}
+plot(mydata$age, mydata$sbp, main = "Scatter plot of age versus SBP.")
 ```
 
-By using the additional arguments in the `plot()` function you can adjust, among others, the color and type of line and the color and style of the points as well as rename the legends of the `y` and `x` axis.
-```{r}
-plot(mydata$age, mydata$sbp, col = 'blue',  ylab = "Systolic Blood Pressure", xlab = "Age", xlim = c(0, 90), ylim = c(80, 200), main = "Blood Pressure vs Age scatter plot.") 
+By using the additional arguments in the `plot()` function you can adjust, among others, the color and type of line and the color and style of the points as well as rename the legends of the `y` and `x` axis (Figure 6).
+
+```{r, fig.cap = "Scatter plot of blood pressure versus age"}
+plot(mydata$age, mydata$sbp, col = 'blue',  ylab = "Systolic Blood Pressure", xlab = "Age", 
+     xlim = c(0, 90), ylim = c(80, 200), main = "Blood pressure vs age scatter plot.") 
 ```
 
-You can overlay two graphs on the same figure in order to identify any trend or level differences. For example, in order to present differences in the increase of SBP between women and men you could plot two graphs one above the other:
+You can overlay two graphs on the same figure in order to identify any trend or level differences. For example, in order to present differences in the increase of SBP between women and men you could plot two graphs one above the other (Figure 7):
 
-```{r}
-plot(mydata$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], main = "Scatter plot of Age versus SBP.", ylab = 'sbp', xlab = 'age')
+```{r, fig.cap = "Scatter plot of blood pressure versus age - overlaid"}
+plot(mydata$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], 
+     main = "Scatter plot of Age versus SBP.", ylab = 'sbp', xlab = 'age')
 points(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], col = 2)
 legend(18, 175, legend = c("Female", "Male"),col = c(1, 2), lty = 1:2, cex = 0.8)
 ```
@@ -610,42 +618,52 @@ Finally you can plot two figures side-by-side under each other or you can plot f
 par(mfrow = c(2, 1)) 
 ```
 
-forces two figures to be plotted under each other (in 2 rows, 1 column). Adjusting the rows and columns back to `c(1, 1)` returns R to its normal plotting mode:
-```{r fig.height = 10, fig.width = 10}
+forces two figures to be plotted under each other (in 2 rows, 1 column) (Figure 8). Adjusting the rows and columns back to `c(1, 1)` returns R to its normal plotting mode (Figure 9):
+
+```{r fig.height = 10, fig.width = 10, fig.cap = "Side-by-side figures"}
 par(mfrow=c(2,1))
-plot(mydata$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], main = "Scatter plot of Age versus SBP.",ylab = 'sbp', xlab= 'age')
+plot(mydata$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], 
+     main = "Scatter plot of Age versus SBP.",ylab = 'sbp', xlab= 'age')
 points(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], col = 3)
 
 
-plot(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], ylab = 'sbp', xlab= 'age')
-points(mydata_new$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], col = 4)
+plot(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], 
+     ylab = 'sbp', xlab= 'age')
+points(mydata_new$age[mydata$gender == "female"], mydata$sbp[mydata$gender == "female"], 
+       col = 4)
 
+```
 
+```{r fig.height = 10, fig.width = 10, fig.cap = "Figure shown in normal plotting mode"}
 par(mfrow = c(1, 1))
-plot(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], main = "Scatter plot of Age versus SBP for males.", ylab = 'sbp', xlab = 'age')
+plot(mydata$age[mydata$gender == "male"], mydata$sbp[mydata$gender == "male"], 
+     main = "Scatter plot of Age versus SBP for males.", ylab = 'sbp', xlab = 'age')
 ```
 
 ## Bar Plots
 
-Bar plots can be constructed with a similar style as the ones made in Excel or other graph-producing software. As an example you could plot in bars the SBP of the first five subjects, change the bar color and give names to every bar 
+Bar plots can be constructed with a similar style as the ones made in Excel or other graph-producing software. As an example you could plot in bars the SBP of the first five subjects, change the bar color and give names to every bar (FIgure 10).
 
-```{r}
-barplot(mydata$sbp[1:5], density = c(1:5), col = c(1:5), names.arg = c("1", "2", "3", "4", "5"), xlab = "subject ID", ylab = "SBP", main = "Bar plot of the SBP of the first five subjects.")
+```{r, fig.cap = "Barplot of SBP of the first five subjects"}
+barplot(mydata$sbp[1:5], density = c(1:5), col = c(1:5), 
+        names.arg = c("1", "2", "3", "4", "5"), xlab = "subject ID", 
+        ylab = "SBP", main = "Bar plot of the SBP of the first five subjects.")
 ```
 
 ## Histograms
 
-Sometimes when first observing a new dataset, you want to look at the approximate distribution of a variable. One graphical way of doing so is to look at the histogram of a variable. The histogram can present the frequency of appearance (or the density) of specific values on the whole range of the sample space of this variable. As an example, if you would be interested in finding out what is the empirical distribution of SBP, you could simply use the following command:
-```{r}
-hist(mydata$sbp, main = "Frequency histogram of the SBP variable.")
+Sometimes when first observing a new dataset, you want to look at the approximate distribution of a variable. One graphical way of doing so is to look at the histogram of a variable. The histogram can present the frequency of appearance (or the density) of specific values on the whole range of the sample space of this variable. As an example, if you would be interested in finding out what is the empirical distribution of SBP (Figure 11), you could simply use the following command:
+
+```{r, fig.cap = "Histogram of SBP"}
+hist(mydata$sbp, main = "Histogram of SBP.")
 ```
 
-We can adjust for the number of groups we wish the variable's range to be split in Figure 7 by using the breaks option, the colors of the columns using col, the range of values that will be plotted with `xlim` and also decide between a frequency or a density plot through the logical `freq` option.
+We can adjust for the number of groups we wish the variable's range to be split in Figure 11 by using the breaks option, the colors of the columns using col, the range of values that will be plotted with `xlim` and also decide between a frequency or a density plot through the logical `freq` option.
 
-A nicer way to visualize the density of a random variable is through Kernel density plots (Figure 8). These are approximations of the probability distribution through the empirical distribution function. Hence, the approximate density for the SBP measurements can be plotted using a combination of the functions `plot()` and `density()`:
+A nicer way to visualize the density of a random variable is through Kernel density plots (Figure 12). These are approximations of the probability distribution through the empirical distribution function. Hence, the approximate density for the SBP measurements can be plotted using a combination of the functions `plot()` and `density()`:
 
-```{r}
-plot(density(mydata$sbp), main = "Density plot for the SBP variable.")
+```{r, fig.cap = "Density plot of SBP"}
+plot(density(mydata$sbp), main = "Density plot of SBP.")
 ``` 
 
 
@@ -662,13 +680,13 @@ mydata$sbpgroup[mydata$sbp < 120] <- 1
 ```
 
 We are almost ready to create the pie chart. Before doing so however we have to calculate the frequency of presence of all the different SBP groups. That can be done with the function `table()`. Finally we can proceed with the pie chart as follows:
-```{r}
-pie(table(mydata$sbpgroup), labels = c("120", "130", "150", "190"), main = "Pie chart with frequency of the four SBP groups.")
+
+```{r, fig.cap = "Pie chart with frequency of the four SBP groups"}
+pie(table(mydata$sbpgroup), labels = c("120", "130", "150", "190"), 
+    main = "Pie chart with frequency of the four SBP groups.")
 ```
 
-
-
-Extra arguments can be passed to the `pie()` function resulting in Figure 9 that can control for various graph parameters (color, chart size, legend etc).
+Extra arguments can be passed to the `pie()` function resulting in Figure 13 that can control for various graph parameters (color, chart size, legend etc).
 
 ## ggplot
 
@@ -683,7 +701,8 @@ library(ggplot2)
 ```
 
 ## Scatter plot
-The plot shown here is a scatterplot of systolic blood pressure at different ages stratified by gender. We first specify the dataset used for plotting, which is mydata_subs1, and define the x- and y-axes (`x = age`, `y = sbp`) in the `aes` object. 
+
+The plot shown here is a scatterplot of systolic blood pressure at different ages stratified by gender (Figure 14). We first specify the dataset used for plotting, which is mydata_subs1, and define the x- and y-axes (`x = age`, `y = sbp`) in the `aes` object. 
 
 ```{r}
 mydata_subs1 <- mydata[, 1:5]
@@ -692,7 +711,8 @@ mydata_subs1 <- mydata[, 1:5]
 Since we want to see whether the systolic blood pressure is systematically different between men and women, we specify the color option in aes (`color = gender`). The geom object for a scatterplot is `geom_point`. In the `geom_point` object, we can specify the shape, the size and the stroke of the markers on the plot. If we don't specify anything in the object, `ggplot` will rely on the default values.
 
 In addition to the two basic objects, other objects can be added to make the plot fancier. Here, we use the `geom_text` to label the first 5 individuals in the dataset. Also, we use the `scale_color_manual` to tell the `ggplot` which color to use for men and women. Last, `theme_bw()` is used to change the theme color to black white. If these are not specified in the code, `ggplot` will use the default setting.
-```{r}
+
+```{r, fig.cap = "Scatterplot of SBP by gender"}
 ggplot(mydata_subs1, aes(x = age, y = sbp, color = gender)) + 
  geom_point(shape = 1, size = 1, stroke = 1) + 
  geom_text(aes(label = id),
@@ -705,23 +725,23 @@ ggplot(mydata_subs1, aes(x = age, y = sbp, color = gender)) +
 
 ## Bar plot
 
-The bar plot shows the systolic blood pressure for the first 5 individuals in the dataset. Similarly, in the `ggplot` function, we first specify which data set we will use, which is a subset of the original data - mydata[1:5,]. In the aes object the y-axis is set to sbp and the x-axis to id because we want to show sbp for each individual. In the aes, we also add the fill option, which tells `ggplot` to present different bars with different filling colors corresponding to different id. The geom object for bar plot is geom_bar. We use the option stat = "identity" to tell `ggplot` that we want the heights of the bars to represent the original values of sbp in the data set. 
+The bar plot (Figure 15) shows the systolic blood pressure for the first 5 individuals in the dataset. Similarly, in the `ggplot` function, we first specify which data set we will use, which is a subset of the original data - mydata[1:5,]. In the aes object the y-axis is set to sbp and the x-axis to id because we want to show sbp for each individual. In the aes, we also add the fill option, which tells `ggplot` to present different bars with different filling colors corresponding to different id. The geom object for bar plot is geom_bar. We use the option stat = "identity" to tell `ggplot` that we want the heights of the bars to represent the original values of sbp in the data set. 
 
-```{r}
+```{r, fig.cap = "Barplot of SBP of the first five subjects"}
 ggplot(mydata[1:5, ], aes(x = id, y = sbp, fill = factor(id))) + 
  geom_bar(stat ='identity', color="gray50", alpha = 0.7, size = 0.5) + 
- scale_fill_manual(values = c("darkseagreen", "plum", "skyblue", "hotpink", "slateblue")) + 
+ scale_fill_manual(values = c("darkseagreen", "plum", "skyblue", "hotpink", "slateblue"))+ 
  theme_bw()
 ```
  
-
 ## Histogram with overlaid density
 
-Here, we show a histogram of systolic blood pressure with the overlaid density by men and women, respectively. In the `ggplot()` function, we specify the x-axis as sbp and y-axis as the density of sbp (`y = ..density..`). The geom object used here include `geom_histogram` and `geom_density`. In the `geom_density` object, we use aes to tell `ggplot` that the shading area under the histogram should be different between men and women. User-defined binwidth is also allowed for the histogram (binwidth = 10). The object, `geom_density`, tells `ggplot` to overlay the histogram with a density line for men and women, respectively, with line with of 0.4. The difference between color and fill is that color is for the markers and fill is the shading area under the line. Because a histogram contains the lines and the shading area under the line, we have to specify the color for each sex differently. The object `facet_wrap` is to separate the histogram into two panels. Without `facet_wrap` object, `ggplot` would overlay the histogram of women on the histogram of men.
+Here, we show a histogram of systolic blood pressure with the overlaid density by men and women, respectively (Figure 16). In the `ggplot()` function, we specify the x-axis as sbp and y-axis as the density of sbp (`y = ..density..`). The geom object used here include `geom_histogram` and `geom_density`. In the `geom_density` object, we use aes to tell `ggplot` that the shading area under the histogram should be different between men and women. User-defined binwidth is also allowed for the histogram (binwidth = 10). The object, `geom_density`, tells `ggplot` to overlay the histogram with a density line for men and women, respectively, with line with of 0.4. The difference between color and fill is that color is for the markers and fill is the shading area under the line. Because a histogram contains the lines and the shading area under the line, we have to specify the color for each sex differently. The object `facet_wrap` is to separate the histogram into two panels. Without `facet_wrap` object, `ggplot` would overlay the histogram of women on the histogram of men.
 
-```{r}
+```{r, fig.cap = "Barplot of SBP of the first five subjects"}
 ggplot(mydata, aes(x = sbp, y = ..density.., color = gender)) +
- geom_histogram(aes(fill = gender), position = "dodge", alpha = 0.6, size = 0.4, binwidth = 10) + 
+ geom_histogram(aes(fill = gender), 
+                position = "dodge", alpha = 0.6, size = 0.4, binwidth = 10) + 
  geom_density(size = 0.4) + 
  scale_color_manual(values = c("maroon", "navy")) + 
  scale_fill_manual(values = c("hotpink", "royalblue")) + 
@@ -829,7 +849,7 @@ The results now can be interpreted as follows: for a given age the effect of tre
 
 ## Goodness of fit
 
-Adding extra covariates usually improves the quality of the model fit on the data, however sometimes the additional burden and loss of degrees of freedom for estimating one extra parameter outweigh the improvement in model fit. One way to observe the goodness of fit for this model is through the Adjusted R-squared value (Tables 4-7). This value is a measure of the proportion of variation that is accounted for by the covariates used, penalized for each addition of a covariate. In our example you can see that the addition of the variables gender and trt resulted in an increase of the model fit from 64% of the variation explained to 78% in the full model.
+Adding extra covariates usually improves the quality of the model fit on the data, however sometimes the additional burden and loss of degrees of freedom for estimating one extra parameter outweigh the improvement in model fit. One way to observe the goodness of fit for this model is through the Adjusted R-squared value. This value is a measure of the proportion of variation that is accounted for by the covariates used, penalized for each addition of a covariate. In our example you can see that the addition of the variables gender and trt resulted in an increase of the model fit from 64% of the variation explained to 78% in the full model.
 
 The F-test at the bottom of the summary, together with its corresponding P-value are used to compare the fitted model against the null model, that is the model with only the constant used as a variable.
 
@@ -863,18 +883,18 @@ using the formula above we can obtain prediction estimates and 95% confidence in
 Suppose now you want to predict the SBP of a new subject who is 50 years old (Age: 50), is male (gender: "male") and receives no treatment (trt:0), You could create a new dataset that will include this subject only and through the use of the argument newdata estimate a prediction of SBP for him.
 
 ```{r}
-data_predpat <- data.frame(age = 50, gender = "male", trt = 1)
+data_predpat <- data.frame(age = 50, gender = "male", trt = 0)
 pred_sbp_pat <- predict(sbp_fit_multi, interval = "confidence", newdata = data_predpat)
 ```
 
 ## Regression Diagnostics
-Regardless of how infrequently is mentioned in published literature of applied research, most regression models are far from adequate. A lot of models will prove problematic and will require re-estimation (e.g. after outliers removal), corrections due to assumption violations, and other solutions which will eventually result into a greatly improved model. 
+Regardless of how frequently they are mentioned in published literature of applied research, most regression models are far from adequate. A lot of models will prove problematic and will require re-estimation (e.g. after outliers removal), corrections due to assumption violations, and other solutions which will eventually result into a greatly improved model. 
 
 ## Residuals
 We saw earlier that the aim of linear regression is to minimize the sum of the squared distances between the observed and predicted values of the response variable. These distances are known as the residuals of the regression and serve as an estimate of the error terms. Through these residuals we can test assumptions related to the normality of the error term or the assumption of homoscedasticity. 
 
-The residuals of a linear regression can be either found within the variable of the `lm() fit -lm()$res-` or can be calculated by subtracting the predicted from the observed values of the response variable. After capturing the estimated residuals, you can start testing for the assumptions that are underlying the application of linear regression. Lets start by capturing and plotting the residuals of the best fitting model from our example (Figure 10). Afterwards we can use them for different types of diagnostic testing.
-```{r}
+The residuals of a linear regression can be either found within the variable of the `lm() fit -lm()$res-` or can be calculated by subtracting the predicted from the observed values of the response variable. After capturing the estimated residuals, you can start testing for the assumptions that are underlying the application of linear regression. Lets start by capturing and plotting the residuals of the best fitting model from our example (Figure 17). Afterwards we can use them for different types of diagnostic testing.
+```{r, fig.cap="Residuals plot"}
 res_sbp <- sbp_fit_multi$res #or
 res_sbp <- mydata$sbp - predict(sbp_fit_multi)
 plot(res_sbp, main = "Residuals plot")
@@ -882,16 +902,17 @@ plot(res_sbp, main = "Residuals plot")
 
 ## Testing the normality assumption
 
-Let's start with the assumption of normality. There are both visual and formal methods to examine whether this assumption is violated. The simplest method you could start with is to plot the histogram of the variable and visually check how much it resembles a normal distribution. You can add a theoretical normal distribution with mean and standard deviation equal to the mean and standard deviation of the residuals to this histogram, to compare the deviation of the one distribution from the other (Figure 11). 
-```{r fig.height = 5, fig.width = 8}
-hist(res_sbp, freq = F, main = "Histogram and theoretical normal distribution for the residuals.")
+Let's start with the assumption of normality. There are both visual and formal methods to examine whether this assumption is violated. The simplest method you could start with is to plot the histogram of the variable and visually check how much it resembles a normal distribution. You can add a theoretical normal distribution with mean and standard deviation equal to the mean and standard deviation of the residuals to this histogram, to compare the deviation of the one distribution from the other (Figure 18). 
+```{r fig.height = 5, fig.width = 8, fig.cap="Histogram and theoretical normal distribution for the residuals"}
+hist(res_sbp, freq = F, main = "Histogram and theoretical normal distribution for the 
+                                residuals.")
 res_norm <- dnorm(-30:30, mean = mean(res_sbp), sd = sd(res_sbp))
 lines(-30:30, res_norm)
 ``` 
 
 
-Another method to observe deviations of the residual distribution from normality are the Quantile-Quantile (QQ) plots. QQ plots can be used in order to identify whether two samples come from the same distribution. Therefore by generating a sample coming from normal distribution and plot quantiles of it against the quantiles of the residuals we can visually observe whether this term indeed follows the normal distribution. If the residuals follow a normal distribution then all of their points will fall within a straight line. Deviations from a straight line will indicate violation of the normal distribution. The QQ plot additionally facilitates identification of outliers. R has an embedded function named `qqnorm()` which performs the method described above. 
-```{r, fig.width = 10, fig.height = 10}
+Another method to observe deviations of the residual distribution from normality are the Quantile-Quantile (QQ) plots. QQ plots can be used in order to identify whether two samples come from the same distribution. Therefore by generating a sample coming from normal distribution and plot quantiles of it against the quantiles of the residuals we can visually observe whether this term indeed follows the normal distribution. If the residuals follow a normal distribution then all of their points will fall within a straight line. Deviations from a straight line will indicate violation of the normal distribution. The QQ plot additionally facilitates identification of outliers. R has an embedded function named `qqnorm()` which performs the method described above (Figure 19). 
+```{r, fig.width = 10, fig.height = 10, fig.cap="QQ Plot residuals versus the theoretical normal distribution"}
 qqnorm(res_sbp, main = "QQ Plot residuals versus the theoretical normal distribution.")
 ```
  
@@ -901,6 +922,7 @@ You can additionally apply a formal method to test the assumption of normality. 
 norm_ks <- ks.test(res_sbp, pnorm, mean(res_sbp), sd(res_sbp))
 norm_shapiro <- shapiro.test(res_sbp)
 ```
+
 # Data Manipulation w/ Dplyr
 
 When manipulating larger datasets the `dplyr` package provides a set of functions that are easier to read, modify, and computationally faster than their base R alternatives. This is because portions of `dplyr` are written in C++ avoiding R's slow recursive operations.
@@ -919,7 +941,7 @@ Let's start by loading the `dplyr` package.
 library(dplyr)
 ```
 
-`filter()` returns a new dataset with all the observations that satisfy a set of logical expressions. A logical expression usually requires a logical operator and a value to compare the variable to. You have already been introduced to the equality  `==` and less than `<` logical operators. Table 3 provides a more extensive list of R's logical operators and examples of logical expressions using variables in `mydata`. 
+`filter()` returns a new dataset with all the observations that satisfy a set of logical expressions. A logical expression usually requires a logical operator and a value to compare the variable to. You have already been introduced to the equality  `==` and less than `<` logical operators. Table 2 provides a more extensive list of R's logical operators and examples of logical expressions using variables in `mydata`. 
 
 Logical Operators   |  Description                  | Example logical expression
 ------------------- | ----------------------------- |----------------------------------
@@ -933,7 +955,7 @@ Logical Operators   |  Description                  | Example logical expression
 ` | `               |  or                           | `age < 40 | smoke == 1`
 `%in%`              |  in                           | `age %in% 40:50`
 
-Table 3: Logical Operators 
+Table 2: Logical Operators 
 
 In all the `dplyr` functions the first argument is the dataset that will be used. In `filter()` it is followed by a list of logical expressions separated by a comma. It is not necessary to specify the location of the variables in the logical expressions since `dplyr` assumes all variables used are in the dataset being filtered.  
 
@@ -1060,15 +1082,17 @@ Each summary includes the name of the summary, `=`, and a function to generate t
 summarise(mydata, sumSBP = sum(sbp), n = n(), meanSBP = sumSBP/n)
 ```
 
-On its own `summarise()` does not provide a significant advantage over the base R functions that have simpler commands and a more intuitive return. The value of `summarise()` is in using in conjunction with `group_by()` to do a grouped summary.
+On its own `summarise()` does not provide a significant advantage over the base R functions that have simpler commands and a more intuitive return. The value of `summarise()` is in using it in conjunction with `group_by()` to do a grouped summary.
 
-When calling `summarise()` on a grouped dataset it does not return a summary for the whole sample but for each unique group in the grouped dataset. Grouping `mydata` by `gender` using `group_by()`. 
+Calling `summarise()` on a grouped dataset does not return a summary for the whole sample, but for each unique group in the grouped dataset. Grouping `mydata` by `gender` using `group_by()`: 
 
 ```{r}
 mydata_grouped <- group_by(mydata, gender)
 ```
  
-When calling `summarise()` on `mydata_grouped` it creates a summary for every unique level in `gender`, in this case `female` and `male`.   Earlier we estimated the variance and mean of males and females in `mydata`. Using `group_by()` and `summarise()` to estimate.
+When calling `summarise()` on `mydata_grouped` it creates a summary for every unique level in `gender`, in this case `female` and `male`. Earlier we estimated the variance and the mean of males and females in `mydata`. 
+
+Using `group_by()` and `summarise()` to estimate the means and the variance:
 
 ```{r}
 grouped.mydata <- group_by(mydata, gender)
